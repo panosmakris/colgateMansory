@@ -1,0 +1,64 @@
+/* with flexbox */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+}
+
+h2 {
+    margin: .2em .5em;
+    text-align: center;
+    font-size: 1em;
+}
+
+img {
+    width: 100%;
+}
+
+.grid {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  .grid-col {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    flex: 1;
+    padding: 0.1em;
+  }
+
+  .content {
+      position: absolute;
+      background-color: rgba(0, 0, 0, .8);
+      color: white;
+      margin-top: 1em;
+  }
+  
+  /* 2 columns by default, hide columns 2 & 3 */
+  .grid-col--2, .grid-col--3 { display: none }
+  
+  /* 3 columns at medium size */
+  @media ( min-width: 768px ) {
+    .grid-col--2 { display: block; } /* show column 2 */
+    .container {
+        width: 99%;
+    }
+    .grid-item:hover {
+        cursor: pointer;
+    }
+    
+  }
+  
+  /* 4 columns at large size */
+  @media ( min-width: 1080px ) {
+    .grid-col--3 { display: block; } /* show column 3 */
+  }
